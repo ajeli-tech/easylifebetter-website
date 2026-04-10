@@ -73,6 +73,17 @@
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
@@ -304,6 +315,7 @@ ul { list-style: none; }
   max-width: 480px;
   border-radius: var(--radius-xl);
   object-fit: cover;
+  object-position: center top;
   aspect-ratio: 4/3;
   box-shadow: 0 20px 60px rgba(0,0,0,0.28);
   display: block;
@@ -346,8 +358,29 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: clip; /* clips blobs but allows flex children to overflow on inline axis */
   padding-top: 80px;
+}
+
+/* Hero-specific button overrides: need contrast against dark green bg */
+.hero .btn-primary {
+  background: #ffffff;
+  color: #1e5439;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.hero .btn-primary:hover {
+  background: #f0f0f0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+.hero .btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+.hero .btn-outline:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.08);
 }
 
 /* Decorative background blobs */
@@ -382,9 +415,14 @@ ul { list-style: none; }
   gap: var(--space-12);
   align-items: center;
   padding: var(--space-16) 0;
+  overflow: visible;
 }
 @media (min-width: 768px) {
   .hero-content { grid-template-columns: 1fr 1fr; padding: var(--space-20) 0; }
+}
+@media (max-width: 767px) {
+  .hero-text { padding: 0; overflow: visible; }
+  .snap-dots { padding-right: var(--space-4); }
 }
 
 .hero-text { color: var(--color-white); }
@@ -428,20 +466,24 @@ ul { list-style: none; }
   animation-delay: 0.3s;
 }
 
-/* Snap dots decoration */
+/* Snap dots / tag pills decoration */
 .snap-dots {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-10);
+  overflow: visible;
   animation: fadeSlideUp 0.7s ease both;
   animation-delay: 0.4s;
 }
 .snap-dot {
-  padding: var(--space-2) var(--space-5);
+  padding: 8px 20px;
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: 700;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: inline-block;
 }
 .snap-dot-blue   { background: var(--color-accent-blue);   color: #1a3a52; }
 .snap-dot-purple { background: var(--color-accent-purple); color: #4a1a6b; }

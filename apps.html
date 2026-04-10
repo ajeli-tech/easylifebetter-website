@@ -48,14 +48,19 @@
     /* Brand ovals decoration */
     .apps-ovals {
       display: flex;
-      gap: var(--space-3);
+      flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: var(--space-6);
+      overflow: visible;
+      padding-left: 0;
     }
     .apps-oval {
-      padding: var(--space-2) var(--space-5);
+      padding: 8px 20px;
       border-radius: var(--radius-full);
       font-size: var(--font-size-sm);
       font-weight: 700;
+      white-space: nowrap;
+      display: inline-block;
     }
     .apps-oval-blue   { background: var(--color-accent-blue);   color: #0f2d4a; }
     .apps-oval-purple { background: var(--color-accent-purple); color: #4a1a6b; }
@@ -297,25 +302,37 @@
     .notify-subtitle { color: rgba(255,255,255,0.7); font-size: var(--font-size-lg); margin-bottom: var(--space-8); }
     .notify-form {
       display: flex;
-      gap: var(--space-3);
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 480px;
+      margin: 0 auto;
     }
     .notify-input {
-      flex: 1 1 260px;
-      padding: var(--space-4) var(--space-6);
-      border-radius: var(--radius-full);
-      border: 2px solid rgba(255,255,255,0.15);
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,0.2);
       background: rgba(255,255,255,0.08);
       color: white;
-      font-size: var(--font-size-base);
+      font-size: 1rem;
       font-family: var(--font-family);
       outline: none;
-      transition: border-color var(--transition-fast), background var(--transition-fast);
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
     .notify-input::placeholder { color: rgba(255,255,255,0.4); }
     .notify-input:focus { border-color: var(--apps-accent); background: rgba(255,255,255,0.12); }
+    .notify-form .btn-apps-primary {
+      padding: 16px 48px;
+      border-radius: 999px;
+      font-size: 1rem;
+    }
     .notify-disclaimer { margin-top: var(--space-4); font-size: var(--font-size-xs); color: rgba(255,255,255,0.4); }
+    /* Email label color fix */
+    label[for="notify-email"],
+    .email-label {
+      color: rgba(255,255,255,0.6) !important;
+    }
 
     /* Nav overrides for blue page */
     .apps-page .brand-name { color: white; }
