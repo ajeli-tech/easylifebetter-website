@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products — Easy Life Better | Everyday Life Made Simple</title>
+  <meta name="description" content="Discover Easy Life Better's innovative everyday products available on Amazon. Smart, simple solutions designed to make your daily life easier." />
+  <meta name="author" content="Easy Life Better LLC" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Our Products — Easy Life Better" />
+  <meta property="og:description" content="Smart, simple solutions designed to make your daily life easier. Available on Amazon." />
+  <meta property="og:image"       content="assets/elb_picto.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* ── Products page specific ─────────────────────── */
+    .products-hero {
+      background: var(--color-primary);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .products-hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .products-hero-blob-1 { width: 500px; height: 500px; background: var(--color-accent-blue); top: -150px; right: -80px; }
+    .products-hero-blob-2 { width: 350px; height: 350px; background: var(--color-accent-yellow); bottom: -80px; left: 5%; }
+
+    .products-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+      align-items: center;
+      padding: var(--space-16) 0;
+    }
+    @media (min-width: 768px) {
+      .products-hero-inner { grid-template-columns: 1fr 1fr; padding: var(--space-20) 0; }
+    }
+
+    .products-hero-text { color: var(--color-white); }
+    .products-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      color: var(--color-accent-yellow);
+      margin-bottom: var(--space-6);
+    }
+    .products-hero-title { color: var(--color-white); margin-bottom: var(--space-6); }
+    .products-hero-subtitle {
+      font-size: var(--font-size-lg);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: var(--space-8);
+    }
+
+    /* Snap hand image */
+    .products-hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .snap-hand-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+    .snap-hand-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .snap-hand-img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    /* ── Products grid section ──────────────────────── */
+    .products-section { background: var(--color-bg); }
+
+    /* Hero product card */
+    .product-hero-card {
+      background: var(--color-primary);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-8);
+      position: relative;
+    }
+    .product-hero-card-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @media (min-width: 768px) {
+      .product-hero-card-inner { grid-template-columns: 1.2fr 1fr; }
+    }
+    .product-hero-text {
+      padding: var(--space-12);
+      color: var(--color-white);
+      position: relative;
+      z-index: 1;
+    }
+    .product-coming-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) var(--space-4);
+      background: var(--color-accent-yellow);
+      color: #3a2e00;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-5);
+    }
+    .product-hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
+    .product-hero-name { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: var(--space-4); color: var(--color-white); }
+    .product-hero-tagline { font-size: var(--font-size-lg); color: rgba(255,255,255,0.85); margin-bottom: var(--space-4); font-style: italic; }
+    .product-hero-teaser { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: var(--space-8); }
+    .product-hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+    .btn-yellow { background: var(--color-accent-yellow); color: #3a2e00; font-weight: 800; }
+    .btn-yellow:hover { background: #f0ce30; }
+    .btn-ghost-white {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+    }
+    .btn-ghost-white:hover { background: rgba(255,255,255,0.2); }
+
+    .product-hero-visual {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-mystery-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-mystery-icon {
+      font-size: 8rem;
+      opacity: 0.08;
+      filter: blur(4px);
+      user-select: none;
+    }
+    .product-mystery-overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--color-white);
+      padding: var(--space-8);
+    }
+    .product-mystery-emoji { font-size: 4rem; margin-bottom: var(--space-4); }
+    .product-mystery-text { font-size: var(--font-size-sm); color: rgba(255,255,255,0.5); font-style: italic; }
+
+    /* Smaller product card */
+    .product-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary-light);
+    }
+    .product-card-emoji { font-size: 2.5rem; }
+    .product-card-badge {
+      display: inline-flex;
+      padding: 2px 12px;
+      background: var(--color-accent-yellow);
+      color: #3a2e00;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .product-card-name { font-size: var(--font-size-xl); font-weight: 800; color: var(--color-primary); letter-spacing: -0.02em; }
+    .product-card-desc { color: var(--color-gray); line-height: 1.7; flex: 1; }
+    .product-card-action .btn { width: 100%; justify-content: center; background: rgba(30,84,57,0.07); color: var(--color-primary); }
+    .product-card-action .btn:hover { background: var(--color-primary); color: white; }
+
+    /* ── Amazon CTA ──────────────────────────────────── */
+    .amazon-section {
+      background: var(--color-primary);
+      padding: var(--space-16) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .amazon-section-blob {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    .amazon-section-blob-1 { background: var(--color-accent-yellow); top: -100px; left: 10%; }
+    .amazon-section-blob-2 { background: var(--color-accent-blue); bottom: -100px; right: 10%; }
+    .amazon-inner { position: relative; z-index: 1; }
+    .amazon-label {
+      display: inline-block;
+      padding: var(--space-1) var(--space-4);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      color: var(--color-accent-yellow);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.04em;
+    }
+    .amazon-title { color: var(--color-white); margin-bottom: var(--space-4); }
+    .amazon-subtitle { color: rgba(255,255,255,0.75); font-size: var(--font-size-lg); margin-bottom: var(--space-8); max-width: 520px; margin-left: auto; margin-right: auto; }
+    .amazon-logo { height: 36px; width: auto; margin: 0 auto var(--space-8); filter: brightness(0) invert(1); }
+    .btn-amazon {
+      background: #FF9900;
+      color: #111;
+      font-weight: 800;
+      padding: var(--space-4) var(--space-10);
+      font-size: var(--font-size-lg);
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 30px rgba(255,153,0,0.35);
+    }
+    .btn-amazon:hover { background: #FFAB00; box-shadow: 0 12px 40px rgba(255,153,0,0.5); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ NAVIGATION -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
+          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link" aria-current="page">Our Products</a></li>
+          <li><a href="apps.html"     class="nav-link">Our Apps</a></li>
+          <li><a href="legal.html"    class="nav-link">Legal</a></li>
+        </ul>
+
+        <button class="nav-toggle burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO -->
+  <section class="products-hero" aria-label="Products page hero">
+    <div class="products-hero-blob products-hero-blob-1" aria-hidden="true"></div>
+    <div class="products-hero-blob products-hero-blob-2" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="products-hero-inner">
+
+        <div class="products-hero-text">
+          <div class="products-hero-badge" aria-label="Available on Amazon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 7c-.2.5-.2.6-.2.9v8.2c0 .3 0 .5.2.9l.1.1L9.6 12v-.1L4.7 6.9 4.6 7zm4.9 5l-4.9 4.9V12l4.9-4.9V12zm1.2.6l1.6 1.6-.4.2-5.4 3.1c-.5.3-.9.1-1.1-.2l-.1-.1L11.7 12.6zM12.4 11.4l-5.2-3c-.2-.1-.5-.2-.8-.2s-.5.1-.8.2l5.2 3c.2.1.3.3.3.5s-.1.4-.3.5l-5.2 3c.5.3.9.1 1.1-.2l5.4-3.1c.5-.3.5-.9.3-1.2z"/></svg>
+            Available on Amazon
+          </div>
+
+          <h1 class="heading-xl products-hero-title">
+            Products That Make<br />Life Easier
+          </h1>
+
+          <p class="products-hero-subtitle">
+            We design and select everyday products to simplify your daily routine.
+            Practical, smart solutions. Find them on Amazon.
+          </p>
+
+          <a href="#amazon-cta" class="btn btn-yellow btn-lg" aria-label="Visit our Amazon store">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.6 7c-.2.5-.2.6-.2.9v8.2c0 .3 0 .5.2.9l.1.1L9.6 12v-.1L4.7 6.9 4.6 7z"/></svg>
+            Shop on Amazon
+          </a>
+        </div>
+
+        <div class="products-hero-image">
+          <div class="snap-hand-wrap">
+            <img
+              src="assets/snap_hand.jpg"
+              alt="Easy Life Better snap hand visual"
+              class="snap-hand-img"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PRODUCTS SECTION -->
+  <section class="products-section section" id="products" aria-label="Our products">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <div class="section-label">Coming Soon</div>
+        <h2 class="heading-lg section-title">Our first products are on the way</h2>
+        <p class="section-desc">Something extraordinary is being crafted. Get ready for products that will genuinely change how you experience everyday life.</p>
+      </header>
+
+      <!-- Featured coming-soon product card -->
+      <div class="product-hero-card reveal" aria-label="Baking Revolution product card">
+        <div class="product-hero-card-inner">
+
+          <div class="product-hero-text">
+            <span class="product-coming-badge">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="5"/></svg>
+              Coming Soon
+            </span>
+            <div class="product-hero-emoji" aria-hidden="true">🍰</div>
+            <h2 class="product-hero-name">Baking Revolution</h2>
+            <p class="product-hero-tagline">A product that will change the way you bake.</p>
+            <p class="product-hero-teaser">
+              Something extraordinary is coming. A game-changing product for pastry lovers.
+              We can't say more... yet.
+            </p>
+            <div class="product-hero-actions">
+              <span class="btn btn-yellow" role="status" aria-label="Coming soon">Coming Soon</span>
+              <a href="mailto:contact@easylifebetter.com?subject=Notify Me - Baking Revolution"
+                 class="btn btn-ghost-white"
+                 aria-label="Get notified when Baking Revolution launches">
+                Notify Me
+              </a>
+            </div>
+          </div>
+
+          <div class="product-hero-visual" aria-hidden="true">
+            <div class="product-mystery-bg">
+              <span class="product-mystery-icon">🍰</span>
+            </div>
+            <div class="product-mystery-overlay">
+              <div class="product-mystery-emoji">✨</div>
+              <p class="product-mystery-text">Reveal coming soon...</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Second smaller card -->
+      <div class="cards-grid" style="grid-template-columns: 1fr; max-width: 480px;">
+        <article class="product-card reveal" aria-label="Second upcoming product">
+          <div class="product-card-emoji" aria-hidden="true">✨</div>
+          <span class="product-card-badge">Coming Soon</span>
+          <h3 class="product-card-name">Something Else Is Coming</h3>
+          <p class="product-card-desc">
+            Stay tuned for our next everyday essential. Another smart solution designed to simplify one
+            more part of your daily life.
+          </p>
+          <div class="product-card-action">
+            <a href="mailto:contact@easylifebetter.com?subject=Notify Me - New Product"
+               class="btn"
+               aria-label="Get notified about upcoming products">
+              Notify Me
+            </a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ AMAZON CTA -->
+  <section class="amazon-section" id="amazon-cta" aria-label="Amazon store">
+    <div class="amazon-section-blob amazon-section-blob-1" aria-hidden="true"></div>
+    <div class="amazon-section-blob amazon-section-blob-2" aria-hidden="true"></div>
+    <div class="container amazon-inner">
+      <div class="amazon-label">Our Store</div>
+      <h2 class="heading-lg amazon-title">Our products are available on Amazon</h2>
+      <p class="amazon-subtitle">
+        Browse our growing selection of everyday essentials, designed to make life simpler.
+      </p>
+      <img src="assets/amazon_logo.png" alt="Amazon" class="amazon-logo" />
+      <div>
+        <a href="#" class="btn btn-amazon" aria-label="Visit Easy Life Better on Amazon (coming soon)">
+          Visit Our Amazon Store
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER -->
+  <footer class="footer" role="contentinfo" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-brand-logo">
+            <img src="assets/elb_picto.svg" alt="Easy Life Better" style="height:44px;width:auto;filter:brightness(0) invert(1) opacity(0.8);" />
+            <span class="footer-brand-name">Easy Life Better</span>
+          </div>
+          <p class="footer-brand-desc">
+            Life made easy, in one snap.<br />
+            Easy Life Better LLC, New Mexico, USA.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html"      class="footer-link">Home</a></li>
+            <li><a href="index.html#about" class="footer-link">About</a></li>
+            <li><a href="products.html"   class="footer-link">Our Products</a></li>
+            <li><a href="apps.html"       class="footer-link">Our Apps</a></li>
+            <li><a href="legal.html"      class="footer-link">Legal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-links" role="list">
+            <li><a href="legal.html#privacy-policy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="legal.html#terms-of-use"   class="footer-link">Terms of Use</a></li>
+            <li><a href="legal.html#contact"         class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2025 Easy Life Better LLC. All rights reserved. &nbsp;&middot;&nbsp;
+          704 Wallace Street Suite 289, Clovis, NM 88101, USA
+        </p>
+        <div class="footer-legal-links">
+          <a href="legal.html#privacy-policy" class="footer-legal-link">Privacy</a>
+          <a href="legal.html#terms-of-use"   class="footer-legal-link">Terms</a>
+          <a href="legal.html#contact"         class="footer-legal-link">Contact</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll behaviour
+    const nav = document.getElementById('main-nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Burger menu
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        burger.classList.toggle('active');
+        burger.setAttribute('aria-expanded', navLinks.classList.contains('nav-open'));
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-open');
+          burger.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

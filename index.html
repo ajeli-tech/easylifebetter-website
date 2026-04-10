@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Easy Life Better — Life made easy, in one snap</title>
-  <meta name="description" content="Easy Life Better — Life made easy, in one snap. A mobile shopping & lifestyle app that simplifies your everyday life." />
+  <title>Easy Life Better — Life Made Easy, In One Snap</title>
+  <meta name="description" content="Easy Life Better designs everyday products and mobile apps to simplify your life. Discover our Amazon shop and upcoming app. Life made easy, in one snap." />
   <meta name="keywords" content="Easy Life Better, lifestyle app, shopping app, life made easy, one snap" />
   <meta name="author" content="Easy Life Better LLC" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Easy Life Better — Life made easy, in one snap" />
+  <meta property="og:title"       content="Easy Life Better — Life Made Easy, In One Snap" />
   <meta property="og:description" content="A mobile shopping & lifestyle app that simplifies your everyday life." />
   <meta property="og:image"       content="assets/logo.png" />
   <meta property="og:url"         content="https://easylifebetter.com" />
@@ -22,7 +22,7 @@
   <meta name="twitter:image"       content="assets/logo.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e5439'/><text y='.9em' font-size='75' x='12'>🌿</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
 
   <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -34,28 +34,18 @@
       <div class="nav-inner">
 
         <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
-          <!-- Inline SVG logo for loading performance -->
-          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="100" height="100" rx="22" fill="#ffffff" fill-opacity="0.15"/>
-            <rect x="8" y="8" width="84" height="84" rx="18" fill="white" fill-opacity="0.1"/>
-            <text x="50" y="65" text-anchor="middle" font-size="52" font-family="system-ui">🌿</text>
-          </svg>
-          <span class="nav-logo-text">Easy Life Better</span>
+          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
         </a>
 
         <ul class="nav-links" role="list">
-          <li><a href="#hero"   class="nav-link" aria-current="page">Home</a></li>
-          <li><a href="#about"  class="nav-link">About</a></li>
-          <li><a href="#values" class="nav-link">Values</a></li>
-          <li><a href="legal.html" class="nav-link">Legal</a></li>
-          <li>
-            <a href="#download" class="btn btn-primary nav-cta" aria-label="Download the Easy Life Better app">
-              Download App
-            </a>
-          </li>
+          <li><a href="index.html"    class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="#about"        class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Our Products</a></li>
+          <li><a href="apps.html"     class="nav-link">Our Apps</a></li>
+          <li><a href="legal.html"    class="nav-link">Legal</a></li>
         </ul>
 
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button class="nav-toggle burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span>
           <span></span>
           <span></span>
@@ -88,8 +78,8 @@
           </h1>
 
           <p class="hero-subtitle">
-            Easy Life Better is the mobile lifestyle companion that puts everything you need at your fingertips —
-            shopping, planning, and everyday essentials, all simplified with a single snap.
+            Easy Life Better is the lifestyle companion that puts everything you need at your fingertips.
+            Shopping, planning, everyday essentials, all simplified with a single snap.
           </p>
 
           <div class="hero-actions">
@@ -169,19 +159,26 @@
 
         <div class="about-text reveal">
           <div class="about-label">Our Mission</div>
-          <h2 class="heading-lg about-title">Simplicity is our superpower</h2>
+          <h2 class="heading-lg about-title">About Easy Life Better</h2>
           <p class="about-desc">
-            Easy Life Better was born from a simple belief: everyday life shouldn't be complicated.
-            We built a mobile app that brings shopping, lifestyle tools, and daily essentials together
-            in one beautifully intuitive experience.
+            At Easy Life Better, we believe that everyday life should feel effortless.
           </p>
           <p class="about-desc">
-            Whether you're managing your home, planning ahead, or discovering products that match your
-            lifestyle — Easy Life Better makes it happen in one snap.
+            Our DNA is simple: we create products and apps that genuinely make a difference in your daily
+            routine. No complexity, no friction. Just smart solutions that work the moment you need them.
           </p>
-          <a href="legal.html" class="btn btn-primary" aria-label="View our legal information">
-            View Legal Info
-          </a>
+          <p class="about-desc">
+            On one hand, we design and curate physical products sold on Amazon, carefully selected to solve
+            real everyday problems. On the other hand, we build mobile applications that put the right tools
+            in your pocket, instantly.
+          </p>
+          <p class="about-desc">
+            Two different worlds. One single mission: make your life easier, in one snap.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
+            <a href="products.html" class="btn btn-primary" aria-label="See our products">Our Products</a>
+            <a href="apps.html" class="btn btn-outline" style="color:var(--color-primary);border-color:var(--color-primary);" aria-label="See our apps">Our Apps</a>
+          </div>
         </div>
 
         <div class="about-image-wrap reveal">
@@ -226,7 +223,7 @@
             </svg>
           </div>
           <h3 class="value-title">Simplicity</h3>
-          <p class="value-desc">Complex problems deserve elegant solutions. We strip away the noise so you can focus on what matters — living better.</p>
+          <p class="value-desc">Complex problems deserve elegant solutions. We strip away the noise so you can focus on what matters: living better.</p>
         </article>
 
         <!-- Speed -->
@@ -379,8 +376,8 @@
           <ul class="footer-links" role="list">
             <li><a href="index.html"      class="footer-link">Home</a></li>
             <li><a href="#about"          class="footer-link">About</a></li>
-            <li><a href="#values"         class="footer-link">Our Values</a></li>
-            <li><a href="#brand"          class="footer-link">Brand</a></li>
+            <li><a href="products.html"   class="footer-link">Our Products</a></li>
+            <li><a href="apps.html"       class="footer-link">Our Apps</a></li>
             <li><a href="legal.html"      class="footer-link">Legal</a></li>
           </ul>
         </div>
@@ -422,6 +419,24 @@
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // Burger menu
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        burger.classList.toggle('active');
+        burger.setAttribute('aria-expanded', navLinks.classList.contains('nav-open'));
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-open');
+          burger.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     // Scroll reveal
     const revealObserver = new IntersectionObserver(

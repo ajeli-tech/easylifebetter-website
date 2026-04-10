@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Apps — Easy Life Better | Mobile Apps That Simplify Life</title>
+  <meta name="description" content="Easy Life Better develops mobile apps designed to simplify your everyday life. Our first app is coming soon to the App Store and Google Play." />
+  <meta name="author" content="Easy Life Better LLC" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Our Apps — Easy Life Better" />
+  <meta property="og:description" content="Mobile apps designed to simplify your everyday life. Coming soon to App Store and Google Play." />
+  <meta property="og:image"       content="assets/elb_picto.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* ── Apps page tokens ──────────────────────────── */
+    :root {
+      --apps-primary:   #0f2d4a;
+      --apps-secondary: #1a4a7a;
+      --apps-accent:    #4a9eff;
+      --apps-accent-light: rgba(74,158,255,0.15);
+    }
+
+    /* ── Apps hero ─────────────────────────────────── */
+    .apps-hero {
+      background: var(--apps-primary);
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .apps-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .apps-blob-1 { width: 600px; height: 600px; background: var(--apps-accent); top: -200px; right: -100px; }
+    .apps-blob-2 { width: 400px; height: 400px; background: var(--color-accent-purple); bottom: -100px; left: -50px; }
+    .apps-blob-3 { width: 250px; height: 250px; background: var(--color-accent-yellow); top: 30%; left: 40%; }
+
+    /* Brand ovals decoration */
+    .apps-ovals {
+      display: flex;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .apps-oval {
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+    }
+    .apps-oval-blue   { background: var(--color-accent-blue);   color: #0f2d4a; }
+    .apps-oval-purple { background: var(--color-accent-purple); color: #4a1a6b; }
+    .apps-oval-yellow { background: var(--color-accent-yellow); color: #3a2e00; }
+
+    .apps-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+      align-items: center;
+      padding: var(--space-16) 0;
+    }
+    @media (min-width: 768px) {
+      .apps-hero-inner { grid-template-columns: 1fr 1fr; padding: var(--space-20) 0; }
+    }
+
+    .apps-hero-text { color: var(--color-white); }
+    .apps-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: rgba(74,158,255,0.2);
+      border: 1px solid rgba(74,158,255,0.35);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      color: var(--apps-accent);
+      margin-bottom: var(--space-6);
+    }
+    .apps-hero-title { color: var(--color-white); margin-bottom: var(--space-6); }
+    .apps-hero-subtitle {
+      font-size: var(--font-size-lg);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+    .apps-slogan-img {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: var(--space-8);
+      filter: brightness(0) invert(1) opacity(0.9);
+    }
+
+    /* Hero visual - app card */
+    .apps-hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .app-preview-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      color: var(--color-white);
+    }
+    .app-preview-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 22px;
+      background: var(--apps-secondary);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-5);
+      font-size: 3rem;
+    }
+    .app-preview-name { font-size: var(--font-size-xl); font-weight: 800; margin-bottom: var(--space-2); }
+    .app-preview-sub { font-size: var(--font-size-sm); color: rgba(255,255,255,0.6); margin-bottom: var(--space-6); }
+    .app-store-badges { display: flex; flex-direction: column; gap: var(--space-3); }
+    .store-badge {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-5);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-md);
+      color: rgba(255,255,255,0.4);
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+    }
+    .store-badge-label { font-size: var(--font-size-xs); opacity: 0.6; }
+    .store-badge-name { font-size: var(--font-size-sm); font-weight: 700; }
+    .store-badge-soon {
+      margin-left: auto;
+      font-size: var(--font-size-xs);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.5);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    /* ── App coming soon section ───────────────────── */
+    .apps-main { background: var(--color-bg); }
+
+    .app-hero-card {
+      background: var(--apps-primary);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-12);
+    }
+    .app-hero-card-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: var(--space-12);
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .app-hero-card-inner { grid-template-columns: 1fr 1fr; align-items: center; }
+    }
+    .app-coming-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) var(--space-4);
+      background: rgba(74,158,255,0.2);
+      border: 1px solid var(--apps-accent);
+      color: var(--apps-accent);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-5);
+    }
+    .app-hero-emoji { font-size: 3rem; margin-bottom: var(--space-4); }
+    .app-hero-name { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; color: var(--color-white); margin-bottom: var(--space-4); }
+    .app-hero-tagline { font-size: var(--font-size-lg); color: rgba(255,255,255,0.8); margin-bottom: var(--space-3); }
+    .app-platforms { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-6); }
+    .platform-tag {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+    }
+    .app-hero-teaser { color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: var(--space-8); }
+    .btn-apps-primary {
+      background: var(--apps-accent);
+      color: white;
+      box-shadow: 0 8px 30px rgba(74,158,255,0.3);
+    }
+    .btn-apps-primary:hover { background: #5aaeff; box-shadow: 0 12px 40px rgba(74,158,255,0.45); }
+
+    /* App visual preview */
+    .app-visual-side {
+      display: flex;
+      justify-content: center;
+    }
+    .app-phone-frame {
+      width: 200px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: var(--space-4);
+      text-align: center;
+    }
+    .app-phone-screen {
+      background: rgba(255,255,255,0.04);
+      border-radius: 20px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+    }
+    .app-phone-icon { font-size: 3.5rem; filter: grayscale(0.3); }
+    .app-phone-label { font-size: var(--font-size-xs); color: rgba(255,255,255,0.4); font-style: italic; }
+
+    /* ── Our Approach cards ──────────────────────────── */
+    .approach-section { background: var(--color-white); }
+    .approach-card {
+      background: var(--color-bg);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      border: 1px solid var(--color-border);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .approach-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .approach-icon {
+      width: 56px; height: 56px;
+      background: var(--apps-accent-light);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--space-5);
+    }
+    .approach-icon svg { width: 28px; height: 28px; }
+    .approach-title { font-weight: 700; font-size: var(--font-size-lg); color: var(--apps-primary); margin-bottom: var(--space-3); }
+    .approach-desc { color: var(--color-gray); line-height: 1.7; }
+
+    /* ── Notify section ─────────────────────────────── */
+    .notify-section {
+      background: var(--apps-primary);
+      padding: var(--space-16) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .notify-blob {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .notify-blob-1 { background: var(--apps-accent); opacity: 0.12; top: -100px; right: 5%; }
+    .notify-blob-2 { background: var(--color-accent-purple); opacity: 0.10; bottom: -100px; left: 5%; }
+    .notify-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+    .notify-label {
+      display: inline-block;
+      padding: var(--space-1) var(--space-4);
+      background: rgba(74,158,255,0.2);
+      border: 1px solid rgba(74,158,255,0.35);
+      color: var(--apps-accent);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      margin-bottom: var(--space-6);
+    }
+    .notify-title { color: var(--color-white); margin-bottom: var(--space-4); }
+    .notify-subtitle { color: rgba(255,255,255,0.7); font-size: var(--font-size-lg); margin-bottom: var(--space-8); }
+    .notify-form {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .notify-input {
+      flex: 1 1 260px;
+      padding: var(--space-4) var(--space-6);
+      border-radius: var(--radius-full);
+      border: 2px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: var(--font-size-base);
+      font-family: var(--font-family);
+      outline: none;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .notify-input::placeholder { color: rgba(255,255,255,0.4); }
+    .notify-input:focus { border-color: var(--apps-accent); background: rgba(255,255,255,0.12); }
+    .notify-disclaimer { margin-top: var(--space-4); font-size: var(--font-size-xs); color: rgba(255,255,255,0.4); }
+
+    /* Nav overrides for blue page */
+    .apps-page .nav-logo-text { color: var(--color-white); }
+    .apps-page .nav.scrolled { background: rgba(15,45,74,0.96); }
+    .apps-page .nav.scrolled .nav-logo-text { color: var(--color-white); }
+    .apps-page .nav.scrolled .nav-link { color: rgba(255,255,255,0.85); }
+    .apps-page .nav.scrolled .nav-link:hover { color: var(--apps-accent); }
+    .apps-page .nav.scrolled .nav-toggle span { background: white; }
+    .apps-page .section-title { color: var(--apps-primary); }
+    .apps-page .section-label { background: rgba(74,158,255,0.1); color: var(--apps-secondary); }
+    .apps-page .about-label { background: rgba(74,158,255,0.1); color: var(--apps-secondary); }
+
+    /* Footer blue override */
+    .apps-page .footer { background: var(--apps-primary); }
+    .apps-page .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: var(--space-6); }
+  </style>
+</head>
+<body class="apps-page">
+
+  <!-- ═══════════════════════════════════════ NAVIGATION -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
+          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Our Products</a></li>
+          <li><a href="apps.html"     class="nav-link" aria-current="page">Our Apps</a></li>
+          <li><a href="legal.html"    class="nav-link">Legal</a></li>
+        </ul>
+
+        <button class="nav-toggle burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO -->
+  <section class="apps-hero" aria-label="Apps page hero">
+    <div class="apps-blob apps-blob-1" aria-hidden="true"></div>
+    <div class="apps-blob apps-blob-2" aria-hidden="true"></div>
+    <div class="apps-blob apps-blob-3" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="apps-hero-inner">
+
+        <div class="apps-hero-text">
+          <div class="apps-hero-badge" aria-label="Coming to App Store and Google Play">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.78 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+            Launching on App Store and Google Play
+          </div>
+
+          <h1 class="heading-xl apps-hero-title">
+            Apps That Simplify<br />Your Life
+          </h1>
+
+          <p class="apps-hero-subtitle">
+            We build mobile apps designed around one idea: make every day easier.
+          </p>
+
+          <!-- Brand slogan image -->
+          <img src="assets/slogan.svg" alt="Life made easy, in one snap" class="apps-slogan-img" />
+
+          <!-- Brand ovals -->
+          <div class="apps-ovals" aria-label="Brand identity">
+            <span class="apps-oval apps-oval-blue">Intuitive</span>
+            <span class="apps-oval apps-oval-purple">Elegant</span>
+            <span class="apps-oval apps-oval-yellow">Effortless</span>
+          </div>
+
+          <a href="#notify" class="btn btn-apps-primary btn-lg" aria-label="Get notified when the app launches">
+            Be the First to Know
+          </a>
+        </div>
+
+        <div class="apps-hero-visual" aria-hidden="true">
+          <div class="app-preview-card">
+            <div class="app-preview-icon">📱</div>
+            <div class="app-preview-name">Easy Life Better</div>
+            <div class="app-preview-sub">Our first app, coming soon</div>
+            <div class="app-store-badges">
+              <div class="store-badge" aria-label="Apple App Store, coming soon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.78 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+                <div>
+                  <div class="store-badge-label">Download on the</div>
+                  <div class="store-badge-name">App Store</div>
+                </div>
+                <span class="store-badge-soon">Soon</span>
+              </div>
+              <div class="store-badge" aria-label="Google Play, coming soon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.21.79.25 1.19.09L15.5 12 4.37.15C3.97-.01 3.55.03 3.18.24 2.5.64 2.5 1.38 2.5 2v20c0 .62 0 1.36.68 1.76zM19.5 9.5L16.73 8l-2.46 2.5 2.46 2.5L19.5 14.5l1.67-1c.61-.37.83-.88.83-1.5 0-.62-.22-1.13-.83-1.5L19.5 9.5zM4.37 23.85L14.43 13.5l-1.7-1.73L4.37 23.85zM4.37.15L12.73 9.23l1.7-1.73L4.37.15z"/></svg>
+                <div>
+                  <div class="store-badge-label">Get it on</div>
+                  <div class="store-badge-name">Google Play</div>
+                </div>
+                <span class="store-badge-soon">Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ APP COMING SOON -->
+  <section class="apps-main section" id="our-app" aria-label="Our first app">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <div class="section-label">In Development</div>
+        <h2 class="heading-lg section-title">Our first app is being built</h2>
+        <p class="section-desc">A mobile experience designed to make one part of your everyday life effortless. More details soon.</p>
+      </header>
+
+      <!-- App hero card -->
+      <div class="app-hero-card reveal" aria-label="First app coming soon">
+        <div class="app-hero-card-inner">
+
+          <div>
+            <span class="app-coming-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
+              Coming Soon
+            </span>
+            <div class="app-hero-emoji" aria-hidden="true">📱</div>
+            <h2 class="app-hero-name">Our First App</h2>
+            <p class="app-hero-tagline">We're building something for you.</p>
+            <p class="app-hero-teaser">
+              A mobile experience designed to make one part of your everyday life effortless.
+              Launching soon on App Store and Google Play.
+            </p>
+            <div class="app-platforms" aria-label="Available platforms">
+              <span class="platform-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.78 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5Z"/></svg>
+                iOS App Store
+              </span>
+              <span class="platform-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.25 1.19.09L15.5 12 4.37.15C3.97-.01 3.55.03 3.18.24 2.5.64 2.5 1.38 2.5 2v20c0 .62 0 1.36.68 1.76z"/></svg>
+                Google Play
+              </span>
+            </div>
+            <a href="#notify" class="btn btn-apps-primary" aria-label="Get notified when the app launches">
+              Notify Me
+            </a>
+          </div>
+
+          <div class="app-visual-side" aria-hidden="true">
+            <div class="app-phone-frame">
+              <div class="app-phone-screen">
+                <div class="app-phone-icon">📱</div>
+                <p class="app-phone-label">Coming soon...</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ OUR APPROACH -->
+  <section class="approach-section section" id="approach" aria-label="Our approach">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <div class="section-label" style="background:rgba(74,158,255,0.1);color:var(--apps-secondary);">Our Approach</div>
+        <h2 class="heading-lg section-title">How we build</h2>
+        <p class="section-desc">Three principles guide every design and engineering decision we make.</p>
+      </header>
+
+      <div class="cards-grid">
+
+        <article class="approach-card reveal" aria-label="Intuitive design principle">
+          <div class="approach-icon" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="8" height="8" rx="2" stroke="#4a9eff" stroke-width="2.5"/>
+              <rect x="16" y="4" width="8" height="8" rx="2" stroke="#4a9eff" stroke-width="2.5"/>
+              <rect x="4" y="16" width="8" height="8" rx="2" stroke="#4a9eff" stroke-width="2.5"/>
+              <path d="M16 20a4 4 0 108 0 4 4 0 00-8 0" stroke="#4a9eff" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3 class="approach-title">Intuitive Design</h3>
+          <p class="approach-desc">
+            Every screen is crafted to feel natural from the very first tap. No tutorials needed,
+            no learning curve. If it requires an explanation, we redesign it.
+          </p>
+        </article>
+
+        <article class="approach-card reveal" aria-label="Built for everyone principle">
+          <div class="approach-icon" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="9" r="4" stroke="#4a9eff" stroke-width="2.5"/>
+              <path d="M7 24c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#4a9eff" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="approach-title">Built for Everyone</h3>
+          <p class="approach-desc">
+            Age, background, tech experience: none of it should be a barrier. Our apps are
+            designed to work for anyone, everywhere, the moment they open them.
+          </p>
+        </article>
+
+        <article class="approach-card reveal" aria-label="Always improving principle">
+          <div class="approach-icon" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 4v4m0 12v4M4 14h4m12 0h4" stroke="#4a9eff" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="14" cy="14" r="6" stroke="#4a9eff" stroke-width="2.5"/>
+              <circle cx="14" cy="14" r="2" fill="#4a9eff"/>
+            </svg>
+          </div>
+          <h3 class="approach-title">Always Improving</h3>
+          <p class="approach-desc">
+            We listen, we iterate, we refine. Every update we ship is driven by real user
+            feedback. The app gets better every single week.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ NOTIFY SECTION -->
+  <section class="notify-section" id="notify" aria-label="Get notified">
+    <div class="notify-blob notify-blob-1" aria-hidden="true"></div>
+    <div class="notify-blob notify-blob-2" aria-hidden="true"></div>
+    <div class="container notify-inner">
+      <div class="notify-label">Stay in the loop</div>
+      <h2 class="heading-lg notify-title">Be the first to know<br />when our app launches</h2>
+      <p class="notify-subtitle">
+        Drop your email below and we'll notify you the moment the app goes live
+        on App Store and Google Play.
+      </p>
+      <form class="notify-form" action="mailto:contact@easylifebetter.com" method="get" enctype="text/plain" aria-label="Notify me form">
+        <label for="notify-email" class="sr-only">Your email address</label>
+        <input
+          type="email"
+          id="notify-email"
+          name="body"
+          class="notify-input"
+          placeholder="your@email.com"
+          required
+          aria-required="true"
+          aria-label="Enter your email address to be notified"
+        />
+        <button type="submit" class="btn btn-apps-primary btn-lg" aria-label="Submit to be notified">
+          Notify Me
+        </button>
+      </form>
+      <p class="notify-disclaimer">No spam. One email when we launch. That's it.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER -->
+  <footer class="footer" role="contentinfo" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-brand-logo">
+            <img src="assets/elb_picto.svg" alt="Easy Life Better" style="height:44px;width:auto;filter:brightness(0) invert(1) opacity(0.8);" />
+            <span class="footer-brand-name">Easy Life Better</span>
+          </div>
+          <p class="footer-brand-desc">
+            Life made easy, in one snap.<br />
+            Easy Life Better LLC, New Mexico, USA.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html"      class="footer-link">Home</a></li>
+            <li><a href="index.html#about" class="footer-link">About</a></li>
+            <li><a href="products.html"   class="footer-link">Our Products</a></li>
+            <li><a href="apps.html"       class="footer-link">Our Apps</a></li>
+            <li><a href="legal.html"      class="footer-link">Legal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-links" role="list">
+            <li><a href="legal.html#privacy-policy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="legal.html#terms-of-use"   class="footer-link">Terms of Use</a></li>
+            <li><a href="legal.html#contact"         class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2025 Easy Life Better LLC. All rights reserved. &nbsp;&middot;&nbsp;
+          704 Wallace Street Suite 289, Clovis, NM 88101, USA
+        </p>
+        <div class="footer-legal-links">
+          <a href="legal.html#privacy-policy" class="footer-legal-link">Privacy</a>
+          <a href="legal.html#terms-of-use"   class="footer-legal-link">Terms</a>
+          <a href="legal.html#contact"         class="footer-legal-link">Contact</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll behaviour
+    const nav = document.getElementById('main-nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Burger menu
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        burger.classList.toggle('active');
+        burger.setAttribute('aria-expanded', navLinks.classList.contains('nav-open'));
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-open');
+          burger.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
