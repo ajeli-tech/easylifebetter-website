@@ -12,7 +12,7 @@
   <meta property="og:description" content="Smart, simple solutions designed to make your daily life easier. Available on Amazon." />
   <meta property="og:image"       content="assets/elb_picto.svg" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto_dark.svg" />
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
@@ -273,8 +273,9 @@
     <div class="container">
       <div class="nav-inner">
 
-        <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
-          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
+        <a href="index.html" class="nav-brand" aria-label="Easy Life Better home">
+          <img src="assets/elb_picto.svg" alt="" height="38" />
+          <span class="brand-name">Easy Life Better</span>
         </a>
 
         <ul class="nav-links" role="list">
@@ -484,11 +485,19 @@
   </footer>
 
   <script>
-    // Navbar scroll behaviour
+    // Navbar scroll + logo swap
     const nav = document.getElementById('main-nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const logo = document.querySelector('.nav-brand img');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+        if (logo) logo.src = 'assets/elb_picto_dark.svg';
+      } else {
+        nav.classList.remove('scrolled');
+        if (logo) logo.src = 'assets/elb_picto.svg';
+      }
+    }, { passive: true });
+    if (window.scrollY > 60) { nav.classList.add('scrolled'); if (logo) logo.src = 'assets/elb_picto_dark.svg'; }
 
     // Burger menu
     const burger = document.querySelector('.burger');

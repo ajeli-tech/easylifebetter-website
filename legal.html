@@ -10,7 +10,7 @@
   <meta property="og:description" content="Privacy Policy, Terms of Use, and Company Information for Easy Life Better LLC." />
   <meta property="og:image"       content="assets/logo.png" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto_dark.svg" />
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
@@ -69,18 +69,6 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .ein-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 16px;
-      background: var(--color-primary);
-      color: white;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      margin: 8px 0;
-    }
   </style>
 </head>
 <body>
@@ -90,8 +78,9 @@
     <div class="container">
       <div class="nav-inner">
 
-        <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
-          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
+        <a href="index.html" class="nav-brand" aria-label="Easy Life Better home">
+          <img src="assets/elb_picto.svg" alt="" height="38" />
+          <span class="brand-name">Easy Life Better</span>
         </a>
 
         <ul class="nav-links" role="list">
@@ -186,37 +175,12 @@
                 <strong>Business Type:</strong> Limited Liability Company (LLC)<br />
                 <strong>State of Incorporation:</strong> New Mexico, United States of America<br />
                 <strong>Date of Formation:</strong> January 3, 2025<br />
-                <strong>File Number:</strong> 3008511 / 0008003968<br />
-                <br />
-                <div class="ein-badge" aria-label="Employer Identification Number">
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm3.25 5.5a.75.75 0 00-1.5 0V9H6.25a.75.75 0 000 1.5H10a.75.75 0 00.75-.75V6.5z"/></svg>
-                  </div>
                 <br />
                 <strong>Principal Office Address:</strong><br />
                 704 Wallace Street, Suite 289<br />
                 Clovis, NM 88101<br />
                 United States of America
               </address>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">Registered Agent</h3>
-              <div class="info-box">
-                <p>
-                  <strong>Simplified Registered Agent LLC</strong><br />
-                  412 W 7th Street<br />
-                  Clovis, NM 88101<br />
-                  United States of America
-                </p>
-              </div>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">Partners / Members</h3>
-              <p>Easy Life Better LLC is a member-managed LLC. Its members are:</p>
-              <ul>
-                <li>The founding partners of Easy Life Better LLC</li>
-              </ul>
             </div>
 
           </section>
@@ -605,9 +569,7 @@
                 Easy Life Better LLC<br />
                 704 Wallace Street, Suite 289<br />
                 Clovis, NM 88101<br />
-                United States of America<br /><br />
-                <strong></strong> <br />
-                <strong>New Mexico File #:</strong> 3008511
+                United States of America
               </address>
             </div>
 
@@ -638,8 +600,8 @@
           </div>
           <p class="footer-brand-desc">
             Life made easy, in one snap.<br />
-            Easy Life Better LLC · New Mexico, USA.<br />
-            </p>
+            Easy Life Better LLC, New Mexico, USA.
+          </p>
         </div>
 
         <div>
@@ -681,6 +643,20 @@
   </footer>
 
   <script>
+    // Navbar scroll + logo swap
+    const nav = document.getElementById('main-nav');
+    const logo = document.querySelector('.nav-brand img');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+        if (logo) logo.src = 'assets/elb_picto_dark.svg';
+      } else {
+        nav.classList.remove('scrolled');
+        if (logo) logo.src = 'assets/elb_picto.svg';
+      }
+    }, { passive: true });
+    if (window.scrollY > 60) { nav.classList.add('scrolled'); if (logo) logo.src = 'assets/elb_picto_dark.svg'; }
+
     // Burger menu
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');

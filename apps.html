@@ -12,7 +12,7 @@
   <meta property="og:description" content="Mobile apps designed to simplify your everyday life. Coming soon to App Store and Google Play." />
   <meta property="og:image"       content="assets/elb_picto.svg" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto_dark.svg" />
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
@@ -318,12 +318,13 @@
     .notify-disclaimer { margin-top: var(--space-4); font-size: var(--font-size-xs); color: rgba(255,255,255,0.4); }
 
     /* Nav overrides for blue page */
-    .apps-page .nav-logo-text { color: var(--color-white); }
-    .apps-page .nav.scrolled { background: rgba(15,45,74,0.96); }
-    .apps-page .nav.scrolled .nav-logo-text { color: var(--color-white); }
-    .apps-page .nav.scrolled .nav-link { color: rgba(255,255,255,0.85); }
+    .apps-page .brand-name { color: white; }
+    .apps-page .burger span { background: white; }
+    .apps-page .nav.scrolled { background: #ffffff; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .apps-page .nav.scrolled .brand-name { color: #0f2d4a; }
+    .apps-page .nav.scrolled .nav-link { color: #0f2d4a; }
     .apps-page .nav.scrolled .nav-link:hover { color: var(--apps-accent); }
-    .apps-page .nav.scrolled .nav-toggle span { background: white; }
+    .apps-page .nav.scrolled .burger span { background: #0f2d4a; }
     .apps-page .section-title { color: var(--apps-primary); }
     .apps-page .section-label { background: rgba(74,158,255,0.1); color: var(--apps-secondary); }
     .apps-page .about-label { background: rgba(74,158,255,0.1); color: var(--apps-secondary); }
@@ -340,8 +341,9 @@
     <div class="container">
       <div class="nav-inner">
 
-        <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
-          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
+        <a href="index.html" class="nav-brand" aria-label="Easy Life Better home">
+          <img src="assets/elb_picto.svg" alt="" height="38" />
+          <span class="brand-name">Easy Life Better</span>
         </a>
 
         <ul class="nav-links" role="list">
@@ -632,11 +634,19 @@
   </footer>
 
   <script>
-    // Navbar scroll behaviour
+    // Navbar scroll + logo swap
     const nav = document.getElementById('main-nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const logo = document.querySelector('.nav-brand img');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+        if (logo) logo.src = 'assets/elb_picto_dark.svg';
+      } else {
+        nav.classList.remove('scrolled');
+        if (logo) logo.src = 'assets/elb_picto.svg';
+      }
+    }, { passive: true });
+    if (window.scrollY > 60) { nav.classList.add('scrolled'); if (logo) logo.src = 'assets/elb_picto_dark.svg'; }
 
     // Burger menu
     const burger = document.querySelector('.burger');

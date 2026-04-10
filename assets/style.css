@@ -190,6 +190,24 @@ ul { list-style: none; }
 }
 .nav.scrolled .nav-logo-text { color: var(--color-primary); }
 
+/* ── Nav brand (picto + name) ─────────────────────────────── */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-brand img { height: 38px; width: auto; transition: none; }
+.brand-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+  transition: color var(--transition-base);
+}
+.nav.scrolled .brand-name { color: #1e5439; }
+.nav.scrolled .nav-brand img { content: url('elb_picto_dark.svg'); }
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -215,30 +233,45 @@ ul { list-style: none; }
 .nav-link:hover { color: var(--color-white); }
 .nav-link:hover::after { transform: scaleX(1); }
 
-.nav.scrolled .nav-link { color: var(--color-text); }
-.nav.scrolled .nav-link:hover { color: var(--color-primary); }
+.nav.scrolled .nav-link { color: #1e5439; }
+.nav.scrolled .nav-link:hover { color: var(--color-primary-dark); }
+.nav.scrolled .burger span { background: #1e5439; }
 
 .nav-cta { margin-left: var(--space-4); }
 
-/* Mobile nav toggle */
+/* Mobile nav toggle / burger */
 .nav-toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  padding: var(--space-2);
+  padding: 4px;
   background: none;
   border: none;
 }
-.nav-toggle span {
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.nav-toggle span,
+.burger span {
   display: block;
   width: 24px;
   height: 2px;
   background: var(--color-white);
   border-radius: 2px;
-  transition: transform var(--transition-base), opacity var(--transition-base);
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
 }
-.nav.scrolled .nav-toggle span { background: var(--color-primary); }
+.nav.scrolled .nav-toggle span { background: #1e5439; }
+.burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 767px) {
   .nav-links { display: none; }
@@ -265,9 +298,46 @@ ul { list-style: none; }
   .nav-links .nav-link:hover { color: var(--color-accent-yellow) !important; }
 }
 
-.burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.burger.active span:nth-child(2) { opacity: 0; }
-.burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+/* ── Hero snap image ─────────────────────────────────────── */
+.hero-snap-img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+  display: block;
+}
+
+/* ── About decorative element ────────────────────────────── */
+.about-deco {
+  width: 80px;
+  opacity: 0.15;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  pointer-events: none;
+}
+.about-img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  max-height: 400px;
+  display: block;
+}
+
+/* ── Global tag / badge padding fix ─────────────────────── */
+.snap-dot, .hero-tags span, .apps-oval,
+[class*="badge"]:not(.hero-badge),
+[class*="pill"] {
+  padding: 8px 20px;
+}
+.hero-badge { padding: var(--space-2) var(--space-4); }
+
+/* ── Amazon button padding ───────────────────────────────── */
+.btn-amazon {
+  padding: 14px 32px !important;
+}
 
 /* ── Hero Section ─────────────────────────────────────────── */
 .hero {

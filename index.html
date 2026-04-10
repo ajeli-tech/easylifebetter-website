@@ -22,7 +22,7 @@
   <meta name="twitter:image"       content="assets/logo.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/elb_picto.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/elb_picto_dark.svg" />
 
   <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -33,8 +33,9 @@
     <div class="container">
       <div class="nav-inner">
 
-        <a href="index.html" class="nav-logo" aria-label="Easy Life Better home">
-          <img src="assets/elb_picto.svg" alt="Easy Life Better" height="44" />
+        <a href="index.html" class="nav-brand" aria-label="Easy Life Better home">
+          <img src="assets/elb_picto.svg" alt="" height="38" />
+          <span class="brand-name">Easy Life Better</span>
         </a>
 
         <ul class="nav-links" role="list">
@@ -69,59 +70,43 @@
         <!-- Text side -->
         <div class="hero-text">
           <div class="hero-badge" aria-label="Coming soon badge">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 4.5a.75.75 0 10-1.5 0v3.25l2 2a.75.75 0 101.06-1.06L8.75 8.44V5.5z"/></svg>
-            Coming Soon to App Store
+            🍰 Coming Soon
           </div>
 
           <h1 class="heading-xl hero-title">
-            Life made easy,<br />in one&nbsp;snap.
+            A Product That Will<br />Revolutionize Baking
           </h1>
 
           <p class="hero-subtitle">
-            Easy Life Better is the lifestyle companion that puts everything you need at your fingertips.
-            Shopping, planning, everyday essentials, all simplified with a single snap.
+            Something extraordinary is on its way. Easy Life Better is about to launch a
+            game-changing product for pastry lovers everywhere. Be the first to know.
           </p>
 
-          <div class="hero-actions">
-            <a href="#download" class="btn btn-primary btn-lg" id="download" aria-label="Get notified when the app launches">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.78 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
-              Get on App Store
-            </a>
-            <a href="#about" class="btn btn-outline btn-lg" aria-label="Learn more about Easy Life Better">
-              Learn More
-            </a>
+          <!-- Brand accent tags -->
+          <div class="snap-dots hero-tags" aria-label="Product highlights">
+            <span class="snap-dot snap-dot-blue">Innovative</span>
+            <span class="snap-dot snap-dot-purple">Simple</span>
+            <span class="snap-dot snap-dot-yellow">Game-Changing</span>
           </div>
 
-          <!-- Brand accent dots -->
-          <div class="snap-dots" aria-label="Brand colours">
-            <span class="snap-dot snap-dot-blue">Simple</span>
-            <span class="snap-dot snap-dot-purple">Smart</span>
-            <span class="snap-dot snap-dot-yellow">Swift</span>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary btn-lg" aria-label="Discover our products">
+              Discover Our Products
+            </a>
+            <a href="apps.html" class="btn btn-outline btn-lg" aria-label="See our apps">
+              Our Apps
+            </a>
           </div>
         </div>
 
         <!-- Visual side -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-phone-mockup">
-            <div class="hero-card">
-              <div class="hero-card-logo">
-                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="72" height="72" rx="16" fill="white" fill-opacity="0.2"/>
-                  <text x="36" y="52" text-anchor="middle" font-size="40" font-family="system-ui">🌿</text>
-                </svg>
-              </div>
-              <div class="hero-card-name">Easy Life Better</div>
-              <div class="hero-card-slogan">Life made easy, in one snap</div>
-              <div class="hero-card-dots">
-                <span class="hero-card-dot blue"></span>
-                <span class="hero-card-dot purple"></span>
-                <span class="hero-card-dot yellow"></span>
-              </div>
-              <a href="#download" class="hero-card-btn">
-                📲 Download Free
-              </a>
-            </div>
-          </div>
+        <div class="hero-visual">
+          <img
+            src="assets/snap_hand.jpg"
+            alt="Life made easy in one snap"
+            class="hero-snap-img"
+            loading="eager"
+          />
         </div>
 
       </div>
@@ -182,19 +167,18 @@
         </div>
 
         <div class="about-image-wrap reveal">
-          <div class="about-image-card" aria-label="Easy Life Better logo on light background">
-            <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Easy Life Better logo">
-              <!-- Outer ring -->
-              <circle cx="80" cy="80" r="72" fill="#1e5439" fill-opacity="0.08" stroke="#1e5439" stroke-width="2" stroke-opacity="0.15"/>
-              <!-- Inner circle -->
-              <circle cx="80" cy="80" r="52" fill="#1e5439"/>
-              <!-- Leaf / snap icon -->
-              <text x="80" y="102" text-anchor="middle" font-size="56" font-family="system-ui">🌿</text>
-              <!-- Three dots -->
-              <ellipse cx="52" cy="128" rx="12" ry="6" fill="#8bc8f3"/>
-              <ellipse cx="80" cy="134" rx="12" ry="6" fill="#e2a9f8"/>
-              <ellipse cx="108" cy="128" rx="12" ry="6" fill="#e8c327"/>
-            </svg>
+          <div class="about-image-card" style="position:relative;overflow:visible;padding:0;background:transparent;box-shadow:none;" aria-label="Easy Life Better snap hand image">
+            <img
+              src="assets/snap_hand.jpg"
+              alt="Easy Life Better: life made easy in one snap"
+              class="about-img"
+            />
+            <img
+              src="assets/snap_green.svg"
+              alt=""
+              class="about-deco"
+              aria-hidden="true"
+            />
           </div>
         </div>
 
@@ -414,11 +398,23 @@
 
   <!-- ═══════════════════════════════════════ SCRIPTS -->
   <script>
-    // Navbar scroll behaviour
+    // Navbar scroll + logo swap
     const nav = document.getElementById('main-nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const logo = document.querySelector('.nav-brand img');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+        if (logo) logo.src = 'assets/elb_picto_dark.svg';
+      } else {
+        nav.classList.remove('scrolled');
+        if (logo) logo.src = 'assets/elb_picto.svg';
+      }
+    }, { passive: true });
+    // Run once on load
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+      if (logo) logo.src = 'assets/elb_picto_dark.svg';
+    }
 
     // Burger menu
     const burger = document.querySelector('.burger');
