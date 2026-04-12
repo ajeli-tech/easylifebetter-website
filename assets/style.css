@@ -315,7 +315,7 @@ ul { list-style: none; }
   max-width: 480px;
   border-radius: var(--radius-xl);
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   aspect-ratio: 4/3;
   box-shadow: 0 20px 60px rgba(0,0,0,0.28);
   display: block;
@@ -359,7 +359,7 @@ ul { list-style: none; }
   align-items: center;
   position: relative;
   overflow: clip; /* clips blobs but allows flex children to overflow on inline axis */
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
 /* Hero-specific button overrides: need contrast against dark green bg */
@@ -414,7 +414,7 @@ ul { list-style: none; }
   grid-template-columns: 1fr;
   gap: var(--space-12);
   align-items: center;
-  padding: var(--space-16) 0;
+  padding: var(--space-6) 0 var(--space-16);
   overflow: visible;
 }
 @media (min-width: 768px) {
@@ -471,7 +471,8 @@ ul { list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
-  margin-top: var(--space-10);
+  margin-top: var(--space-6);
+  margin-bottom: 32px;
   overflow: visible;
   animation: fadeSlideUp 0.7s ease both;
   animation-delay: 0.4s;
