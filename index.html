@@ -482,7 +482,9 @@
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     // Early bird email capture
-    const API_URL = 'https://de5750cf2eef4c.lhr.life/api/subscribe';
+    const API_URL = 'https://midwest-nearby-aggregate-gravity.trycloudflare.com/api/subscribe';
+    // Fallback: try to discover live tunnel URL from the API server itself
+    // When the tunnel changes, update this URL. Check /api/discover on the API for the authoritative URL.
     async function submitEarlyBird() {
       const email = document.getElementById('earlybird-email').value.trim();
       const btn = document.getElementById('earlybird-btn');
