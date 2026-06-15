@@ -466,6 +466,67 @@ ul { list-style: none; }
   animation-delay: 0.3s;
 }
 
+/* Early bird email form */
+.hero-form {
+  margin-bottom: var(--space-6);
+  animation: fadeSlideUp 0.7s ease both;
+  animation-delay: 0.25s;
+}
+.hero-form-inner {
+  display: flex;
+  gap: 8px;
+  max-width: 440px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 6px;
+}
+.hero-form-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  outline: none;
+}
+.hero-form-input::placeholder { color: rgba(255,255,255,0.4); }
+.hero-form-btn {
+  padding: 12px 20px;
+  border: none;
+  background: var(--color-accent-yellow);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  font-family: var(--font-family);
+}
+.hero-form-btn:hover { opacity: 0.9; }
+.hero-form-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.hero-form-note {
+  font-size: var(--font-size-xs);
+  color: rgba(255,255,255,0.5);
+  margin-top: 10px;
+  margin-left: 2px;
+}
+.hero-form-success {
+  border: 1px solid rgba(16,185,129,0.3);
+  background: rgba(16,185,129,0.1);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+.hero-form-success p {
+  color: #34d399;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin: 0;
+}
+
 /* Snap dots / tag pills decoration */
 .snap-dots {
   display: flex;

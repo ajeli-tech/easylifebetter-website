@@ -69,8 +69,8 @@
 
         <!-- Text side -->
         <div class="hero-text">
-          <div class="hero-badge" aria-label="Coming soon badge">
-            🍰 Coming Soon
+          <div class="hero-badge" aria-label="Early access badge">
+            🍰 Early Access
           </div>
 
           <h1 class="heading-xl hero-title">
@@ -82,8 +82,22 @@
             game-changing product for pastry lovers everywhere. Be the first to know.
           </p>
 
+          <!-- Email capture form -->
+          <div class="hero-form" id="earlybird-form">
+            <div class="hero-form-inner">
+              <input type="email" id="earlybird-email" placeholder="Enter your email" required class="hero-form-input" />
+              <button type="submit" id="earlybird-btn" class="hero-form-btn" onclick="submitEarlyBird()">
+                🎯 Join the List
+              </button>
+            </div>
+            <p class="hero-form-note" id="earlybird-note">Get notified at launch + exclusive early bird coupon</p>
+            <div class="hero-form-success" id="earlybird-success" style="display:none;">
+              <p>✅ You're in! Check your inbox for confirmation.</p>
+            </div>
+          </div>
+
           <!-- Brand accent tags -->
-          <div class="snap-dots hero-tags" aria-label="Product highlights">
+          <div class="snap-dots hero-tags" aria-label="Product highlights" style="margin-top:1rem;">
             <span class="snap-dot snap-dot-blue">Innovative</span>
             <span class="snap-dot snap-dot-purple">Simple</span>
             <span class="snap-dot snap-dot-yellow">Game-Changing</span>
@@ -440,6 +454,36 @@
       { threshold: 0.12 }
     );
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Early bird email capture
+    const API_URL = 'https://dramatically-fountain-amanda-routing.trycloudflare.com/api/subscribe';
+    async function submitEarlyBird() {
+      const email = document.getElementById('earlybird-email').value.trim();
+      const btn = document.getElementById('earlybird-btn');
+      const note = document.getElementById('earlybird-note');
+      const success = document.getElementById('earlybird-success');
+      if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+      btn.disabled = true; btn.textContent = 'Sending...';
+      try {
+        const r = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        const d = await r.json();
+        if (d.ok) {
+          document.getElementById('earlybird-form').querySelector('.hero-form-inner').style.display = 'none';
+          note.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          alert(d.error || 'Something went wrong. Try again.');
+          btn.disabled = false; btn.textContent = '🎯 Join the List';
+        }
+      } catch(err) {
+        alert('Network error. Please try again later.');
+        btn.disabled = false; btn.textContent = '🎯 Join the List';
+      }
+    }
   </script>
 
 </body>
