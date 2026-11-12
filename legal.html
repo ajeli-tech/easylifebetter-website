@@ -3,581 +3,340 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legal — Privacy Policy &amp; Terms of Use | Easy Life Better LLC</title>
-  <meta name="description" content="Privacy Policy, Terms of Use and legal information for Easy Life Better LLC, registered in New Mexico, USA." />
+  <title>Legal, Privacy Policy &amp; Terms | Easy Life Better LLC</title>
+  <meta name="description" content="Privacy Policy, Terms of Use and product information for Easy Life Better LLC." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title"       content="Legal — Privacy Policy &amp; Terms of Use | Easy Life Better LLC" />
-  <meta property="og:description" content="Privacy Policy, Terms of Use, and Company Information for Easy Life Better LLC." />
-  <meta property="og:image"       content="assets/logo.png" />
+  <link rel="canonical" href="https://www.easylifebetter.com/legal.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Easy Life Better" />
+  <meta property="og:title"       content="Legal, Privacy Policy &amp; Terms | Easy Life Better LLC" />
+  <meta property="og:description" content="Privacy Policy, Terms of Use and product information for Easy Life Better LLC." />
+  <meta property="og:url"         content="https://www.easylifebetter.com/legal.html" />
+  <meta property="og:image"       content="https://www.easylifebetter.com/assets/eclair-pistachio.jpg" />
+  <meta property="og:image:alt"   content="Two pistachio raspberry éclairs made with the Easy Eclair mold" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Legal, Privacy Policy &amp; Terms | Easy Life Better LLC" />
+  <meta name="twitter:description" content="Privacy Policy, Terms of Use and product information for Easy Life Better LLC." />
+  <meta name="twitter:image"       content="https://www.easylifebetter.com/assets/eclair-pistachio.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/elb_picto_dark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" />
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
-    /* Legal-page-specific overrides */
     .legal-updated-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 4px 14px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(10,30,20,0.45);
       border: 1px solid rgba(255,255,255,0.2);
       border-radius: 9999px;
-      font-size: 0.8rem;
+      font-size: 0.875rem;
       font-weight: 600;
       color: #e8c327;
       margin-bottom: 16px;
     }
-    .legal-toc {
-      background: rgba(30,84,57,0.06);
-      border: 1px solid rgba(30,84,57,0.15);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 40px;
-    }
-    .legal-toc-title {
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 12px;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .legal-toc-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-    @media (min-width: 640px) { .legal-toc-list { grid-template-columns: 1fr 1fr; } }
-    .legal-toc-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      transition: color 150ms ease;
-    }
-    .legal-toc-item:hover { color: var(--color-primary-mid); }
-    .legal-toc-num {
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .legal-content a { color: var(--color-primary); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+    .legal-sidebar-link.active { color: var(--color-primary); border-color: var(--color-primary); background: rgba(30,84,57,0.05); }
   </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════ NAVIGATION -->
-  <nav class="nav scrolled" id="main-nav" role="navigation" aria-label="Main navigation">
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
     <div class="container">
       <div class="nav-inner">
-
         <a href="index.html" class="nav-brand" aria-label="Easy Life Better home">
-          <img src="assets/elb_picto.svg" alt="" height="38" />
+          <img src="assets/elb_picto.svg" alt="" width="21" height="38" />
           <span class="brand-name">Easy Life Better</span>
         </a>
-
-        <ul class="nav-links" role="list">
-          <li><a href="index.html"    class="nav-link" style="color:var(--color-text)">Home</a></li>
-          <li><a href="index.html#about" class="nav-link" style="color:var(--color-text)">About</a></li>
-          <li><a href="products.html" class="nav-link" style="color:var(--color-text)">Our Products</a></li>
-          <li><a href="apps.html"     class="nav-link" style="color:var(--color-text)">Our Apps</a></li>
-          <li><a href="legal.html"    class="nav-link" aria-current="page" style="color:var(--color-primary);font-weight:700">Legal</a></li>
+        <ul class="nav-links" id="site-menu" role="list">
+          <li><a href="index.html"   class="nav-link">Home</a></li>
+          <li><a href="product.html" class="nav-link">Easy Eclair</a></li>
+          <li><a href="guide.html"   class="nav-link">Guide &amp; Recipes</a></li>
+          <li><a href="legal.html"   class="nav-link" aria-current="page">Legal</a></li>
         </ul>
-
-        <button class="nav-toggle burger" aria-label="Open menu" aria-expanded="false">
-          <span style="background:var(--color-primary)"></span>
-          <span style="background:var(--color-primary)"></span>
-          <span style="background:var(--color-primary)"></span>
+        <button class="nav-toggle burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
         </button>
-
       </div>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════ LEGAL HERO -->
-  <header class="legal-hero" aria-label="Legal page header">
+  <header class="legal-hero">
     <div class="container">
-      <div class="legal-updated-badge">
-        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 4.5a.75.75 0 10-1.5 0v3.25l2 2a.75.75 0 101.06-1.06L8.75 8.44V5.5z"/></svg>
-        Last updated: January 3, 2025
-      </div>
-      <h1 class="heading-xl legal-hero-title">Legal Information</h1>
-      <p class="legal-hero-subtitle">
-        Privacy Policy · Terms of Use · Company Information · App Store Notices
-      </p>
+      <div class="legal-updated-badge">Last updated: November 12, 2026</div>
+      <h1 class="heading-xl legal-hero-title">Legal information</h1>
+      <p class="legal-hero-subtitle">Company and product information, Privacy Policy, Terms of Use and contact.</p>
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════ STICKY QUICK-NAV -->
-  <nav class="legal-nav" aria-label="Legal sections quick navigation">
+  <nav class="legal-nav" aria-label="Legal sections">
     <div class="container">
       <div class="legal-nav-inner">
-        <a href="#company-info"   class="legal-nav-link">Company Info</a>
-        <a href="#privacy-policy" class="legal-nav-link">Privacy Policy</a>
-        <a href="#terms-of-use"   class="legal-nav-link">Terms of Use</a>
-        <a href="#app-notices"    class="legal-nav-link">App Store Notices</a>
-        <a href="#contact"        class="legal-nav-link">Contact</a>
+        <a href="#company-info"        class="legal-nav-link">Company</a>
+        <a href="#product-information" class="legal-nav-link">Product information</a>
+        <a href="#privacy-policy"      class="legal-nav-link">Privacy Policy</a>
+        <a href="#terms-of-use"        class="legal-nav-link">Terms of Use</a>
+        <a href="#contact"             class="legal-nav-link">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════ LEGAL BODY -->
-  <main role="main">
+  <main>
     <div class="container">
       <div class="legal-body">
 
-        <!-- Sidebar (desktop only) -->
-        <aside class="legal-sidebar" aria-label="Legal sections navigation">
+        <aside class="legal-sidebar" aria-label="Legal sections">
           <nav class="legal-sidebar-nav">
-            <a href="#company-info"   class="legal-sidebar-link">1. Company Information</a>
-            <a href="#privacy-policy" class="legal-sidebar-link">2. Privacy Policy</a>
-            <a href="#terms-of-use"   class="legal-sidebar-link">3. Terms of Use</a>
-            <a href="#app-notices"    class="legal-sidebar-link">4. App Store Notices</a>
-            <a href="#contact"        class="legal-sidebar-link">5. Contact</a>
+            <a href="#company-info"        class="legal-sidebar-link">Company information</a>
+            <a href="#product-information" class="legal-sidebar-link">Product information</a>
+            <a href="#privacy-policy"      class="legal-sidebar-link">Privacy Policy</a>
+            <a href="#terms-of-use"        class="legal-sidebar-link">Terms of Use</a>
+            <a href="#contact"             class="legal-sidebar-link">Contact</a>
           </nav>
         </aside>
 
-        <!-- Main content -->
         <article class="legal-content">
 
-          <!-- Table of contents -->
-          <div class="legal-toc" aria-label="Table of contents">
-            <div class="legal-toc-title">Contents</div>
-            <div class="legal-toc-list">
-              <a href="#company-info"   class="legal-toc-item"><span class="legal-toc-num">1</span> Company Information</a>
-              <a href="#privacy-policy" class="legal-toc-item"><span class="legal-toc-num">2</span> Privacy Policy</a>
-              <a href="#terms-of-use"   class="legal-toc-item"><span class="legal-toc-num">3</span> Terms of Use</a>
-              <a href="#app-notices"    class="legal-toc-item"><span class="legal-toc-num">4</span> App Store Notices</a>
-              <a href="#contact"        class="legal-toc-item"><span class="legal-toc-num">5</span> Contact</a>
-            </div>
-          </div>
-
-          <!-- ─────────────────────────────────────────────────────────
-               SECTION 1 — COMPANY INFORMATION
-               ───────────────────────────────────────────────────────── -->
+          <!-- COMPANY -->
           <section id="company-info" aria-labelledby="company-info-title">
-            <h2 class="legal-section-title" id="company-info-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 014 0v2"/></svg>
-              <span>Company Information</span>
-            </h2>
-
-            <div class="info-box" aria-label="Company registration details">
+            <h2 class="legal-section-title" id="company-info-title"><span>Company information</span></h2>
+            <div class="info-box">
               <div class="info-box-title">Easy Life Better LLC</div>
               <address>
-                <strong>Legal Name:</strong> Easy Life Better LLC<br />
-                <strong>Business Type:</strong> Limited Liability Company (LLC)<br />
-                <strong>State of Incorporation:</strong> New Mexico, United States of America<br />
-                <strong>Date of Formation:</strong> January 3, 2025<br />
-                <br />
-                <strong>Principal Office Address:</strong><br />
-                704 Wallace Street, Suite 289<br />
-                Clovis, NM 88101<br />
-                United States of America
+                <strong>Legal name:</strong> Easy Life Better LLC<br />
+                <strong>Business type:</strong> Limited Liability Company (LLC)<br />
+                <strong>State of formation:</strong> New Mexico, United States of America<br />
+                <strong>Date of formation:</strong> January 3, 2025<br /><br />
+                <strong>Principal office:</strong><br />
+                704 Wallace St, Suite 289<br />
+                Clovis, New Mexico 88101<br />
+                United States of America<br /><br />
+                <strong>Email:</strong> <a href="mailto:contact@easylifebetter.com">contact@easylifebetter.com</a>
               </address>
             </div>
-
           </section>
 
-          <!-- ─────────────────────────────────────────────────────────
-               SECTION 2 — PRIVACY POLICY
-               ───────────────────────────────────────────────────────── -->
-          <section id="privacy-policy" aria-labelledby="privacy-policy-title">
-            <h2 class="legal-section-title" id="privacy-policy-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Privacy Policy</span>
-            </h2>
-
-            <p>
-              This Privacy Policy describes how Easy Life Better LLC ("<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>")
-              collects, uses, and shares information in connection with your use of our mobile application
-              "<strong>Easy Life Better</strong>" (the "<strong>App</strong>").
-              By using the App, you agree to the collection and use of information in accordance with this policy.
-            </p>
+          <!-- PRODUCT INFORMATION -->
+          <section id="product-information" aria-labelledby="product-information-title">
+            <h2 class="legal-section-title" id="product-information-title"><span>Product information</span></h2>
 
             <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.1 Information We Collect</h3>
-              <p>We may collect the following categories of information:</p>
-              <ul>
-                <li>
-                  <strong>Account Information:</strong> When you create an account, we collect your name, email address,
-                  and any other information you choose to provide.
-                </li>
-                <li>
-                  <strong>Usage Data:</strong> We automatically collect information about how you interact with the App,
-                  including pages visited, features used, and time spent in the App.
-                </li>
-                <li>
-                  <strong>Device Information:</strong> We collect information about the device you use to access the App,
-                  including device model, operating system version, unique device identifiers, and mobile network information.
-                </li>
-                <li>
-                  <strong>Location Data:</strong> With your permission, we may collect your approximate or precise location
-                  to provide location-based features. You can disable location access in your device settings.
-                </li>
-                <li>
-                  <strong>Crash Reports &amp; Diagnostics:</strong> We collect anonymized crash reports and diagnostic data
-                  to improve App stability and performance.
-                </li>
-              </ul>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.2 How We Use Your Information</h3>
-              <p>We use the information we collect to:</p>
-              <ul>
-                <li>Provide, operate, and maintain the App and its features;</li>
-                <li>Personalize your experience and deliver content tailored to your preferences;</li>
-                <li>Process transactions and send you related information;</li>
-                <li>Send you technical notices, updates, security alerts, and support messages;</li>
-                <li>Respond to your comments, questions, and requests;</li>
-                <li>Monitor and analyze usage patterns to improve the App;</li>
-                <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities;</li>
-                <li>Comply with legal obligations.</li>
-              </ul>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.3 Sharing of Information</h3>
+              <h3 class="legal-subsection-title">Product</h3>
               <p>
-                We do <strong>not</strong> sell, trade, or rent your personal information to third parties.
-                We may share your information only in the following limited circumstances:
+                Easy Eclair, silicone éclair mold by Easy Life Better.<br />
+                Material: food grade silicone. Model: LFGB-MOULD-01. SKU: ELB-MOULE-ECLAIR-01.<br />
+                Designed in USA, made in PRC.
               </p>
-              <ul>
-                <li>
-                  <strong>Service Providers:</strong> We may share your information with trusted third-party service providers
-                  who assist us in operating the App (e.g., cloud hosting, analytics). These providers are contractually
-                  obligated to protect your information.
-                </li>
-                <li>
-                  <strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in
-                  response to valid requests by public authorities (e.g., court orders, government agencies).
-                </li>
-                <li>
-                  <strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of all or part of our
-                  assets, your information may be transferred. We will notify you before your information becomes subject
-                  to a different privacy policy.
-                </li>
-                <li>
-                  <strong>With Your Consent:</strong> We may share your information for any other purpose with your explicit consent.
-                </li>
-              </ul>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.4 Data Retention</h3>
               <p>
-                We retain your personal information for as long as necessary to provide you with the App's services and
-                to comply with our legal obligations. When you delete your account, we will delete or anonymize your
-                personal information within 30 days, unless retention is required by law.
+                The mold is for freezer use only and must never be placed in the oven. It is not dishwasher safe.
+                Full instructions, care and precautions are on our <a href="guide.html">guide page</a>.
               </p>
             </div>
 
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.5 Your Rights</h3>
-              <p>Depending on your location, you may have the following rights regarding your personal information:</p>
-              <ul>
-                <li><strong>Access:</strong> The right to request a copy of the personal information we hold about you.</li>
-                <li><strong>Correction:</strong> The right to request correction of inaccurate or incomplete information.</li>
-                <li><strong>Deletion:</strong> The right to request deletion of your personal information ("right to be forgotten").</li>
-                <li><strong>Portability:</strong> The right to receive your data in a structured, machine-readable format.</li>
-                <li><strong>Objection:</strong> The right to object to the processing of your personal information.</li>
-                <li><strong>Withdrawal of Consent:</strong> Where we rely on consent, the right to withdraw it at any time.</li>
-              </ul>
-              <p>To exercise any of these rights, please contact us at <a href="mailto:contact@easylifebetter.com" style="color:var(--color-primary);font-weight:600">contact@easylifebetter.com</a>.</p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.6 Children's Privacy</h3>
-              <p>
-                The App is not directed to children under the age of 13 (or 16 in the European Economic Area).
-                We do not knowingly collect personal information from children. If you believe we have inadvertently
-                collected information from a child, please contact us immediately.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.7 Security</h3>
-              <p>
-                We implement commercially reasonable technical and organizational measures to protect your personal
-                information from unauthorized access, disclosure, alteration, or destruction. However, no method of
-                transmission over the Internet or electronic storage is 100% secure.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">2.8 Changes to This Privacy Policy</h3>
-              <p>
-                We may update this Privacy Policy from time to time. We will notify you of any material changes
-                by posting the new policy in the App and updating the "Last updated" date. Your continued use
-                of the App after changes constitutes your acceptance of the revised policy.
-              </p>
-            </div>
-
-          </section>
-
-          <!-- ─────────────────────────────────────────────────────────
-               SECTION 3 — TERMS OF USE
-               ───────────────────────────────────────────────────────── -->
-          <section id="terms-of-use" aria-labelledby="terms-of-use-title">
-            <h2 class="legal-section-title" id="terms-of-use-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              <span>Terms of Use</span>
-            </h2>
-
-            <p>
-              These Terms of Use ("<strong>Terms</strong>") govern your access to and use of the Easy Life Better mobile
-              application and related services provided by Easy Life Better LLC.
-              Please read these Terms carefully before using the App. By accessing or using the App, you agree to
-              be bound by these Terms.
-            </p>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.1 Acceptance of Terms</h3>
-              <p>
-                By downloading, installing, or using the App, you confirm that you are at least 13 years of age
-                (or 16 in the EEA), have read and understood these Terms, and agree to be bound by them.
-                If you do not agree, you must not use the App.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.2 License to Use the App</h3>
-              <p>
-                Subject to these Terms, Easy Life Better LLC grants you a limited, non-exclusive, non-transferable,
-                revocable license to download and use the App on a device you own or control, solely for your personal,
-                non-commercial purposes. This license does not include the right to:
-              </p>
-              <ul>
-                <li>Sublicense, sell, resell, transfer, or assign the App to any third party;</li>
-                <li>Modify, translate, adapt, or create derivative works based on the App;</li>
-                <li>Reverse engineer, decompile, or disassemble the App;</li>
-                <li>Use the App for any commercial purpose without prior written consent;</li>
-                <li>Remove any proprietary notices or labels on the App.</li>
-              </ul>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.3 User Conduct</h3>
-              <p>You agree not to use the App to:</p>
-              <ul>
-                <li>Violate any applicable local, state, national, or international law or regulation;</li>
-                <li>Transmit any content that is unlawful, harmful, threatening, abusive, or otherwise objectionable;</li>
-                <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity;</li>
-                <li>Engage in any activity that interferes with or disrupts the App or servers connected to it;</li>
-                <li>Attempt to gain unauthorized access to any part of the App or its related systems.</li>
-              </ul>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.4 Intellectual Property</h3>
-              <p>
-                The App and all its contents, features, and functionality, including but not limited to text, graphics,
-                logos, icons, images, audio clips, and software, are the exclusive property of Easy Life Better LLC
-                and are protected by United States and international copyright, trademark, patent, trade secret,
-                and other intellectual property or proprietary rights laws.
-              </p>
-              <p>
-                "Easy Life Better", the Easy Life Better logo, and the slogan "Life made easy, in one snap" are
-                trademarks of Easy Life Better LLC. You may not use these without prior written permission.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.5 In-App Purchases</h3>
-              <p>
-                The App may offer in-app purchases. All purchases are final and non-refundable except as required
-                by applicable law or as expressly stated in our refund policy. Prices are subject to change.
-                All in-app purchase transactions are processed by Apple Inc. through the App Store and are subject
-                to Apple's payment terms.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.6 Disclaimer of Warranties</h3>
-              <p>
-                THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND,
-                EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, EASY LIFE BETTER LLC
-                DISCLAIMS ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-                PURPOSE, AND NON-INFRINGEMENT.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.7 Limitation of Liability</h3>
-              <p>
-                TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL EASY LIFE BETTER LLC,
-                ITS MEMBERS, OFFICERS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
-                SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION LOSS OF PROFITS, DATA,
-                USE, OR GOODWILL, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE APP.
-              </p>
-              <p>
-                IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS EXCEED THE AMOUNT YOU PAID TO EASY LIFE
-                BETTER LLC IN THE TWELVE (12) MONTHS PRIOR TO THE CAUSE OF ACTION, OR $50 USD, WHICHEVER IS GREATER.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.8 Indemnification</h3>
-              <p>
-                You agree to indemnify, defend, and hold harmless Easy Life Better LLC and its members, officers,
-                employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses,
-                costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your
-                violation of these Terms or your use of the App.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.9 Governing Law &amp; Dispute Resolution</h3>
-              <p>
-                These Terms shall be governed by and construed in accordance with the laws of the
-                <strong>State of New Mexico, United States of America</strong>, without regard to its conflict of law provisions.
-              </p>
-              <p>
-                Any dispute arising out of or relating to these Terms or the App shall be submitted to binding
-                arbitration in Clovis, New Mexico, USA, under the rules of the American Arbitration Association,
-                except that either party may seek injunctive or other equitable relief in a court of competent jurisdiction.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.10 Termination</h3>
-              <p>
-                We reserve the right to terminate or suspend your access to the App at our sole discretion,
-                without notice, for conduct that we believe violates these Terms or is harmful to other users,
-                us, or third parties, or for any other reason. Upon termination, the license granted to you
-                will immediately cease.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">3.11 Changes to Terms</h3>
-              <p>
-                We reserve the right to modify these Terms at any time. We will provide notice of material changes
-                by updating the date at the top of this page and/or by providing notice through the App.
-                Your continued use of the App after the effective date of revised Terms constitutes your acceptance.
-              </p>
-            </div>
-
-          </section>
-
-          <!-- ─────────────────────────────────────────────────────────
-               SECTION 4 — APP STORE SPECIFIC NOTICES
-               ───────────────────────────────────────────────────────── -->
-          <section id="app-notices" aria-labelledby="app-notices-title">
-            <h2 class="legal-section-title" id="app-notices-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-              <span>App Store Specific Notices</span>
-            </h2>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">4.1 Distribution via Apple App Store</h3>
-              <p>
-                The Easy Life Better App is distributed through the <strong>Apple App Store</strong>, operated by Apple Inc.
-                ("Apple"). These Terms constitute an agreement between you and Easy Life Better LLC only.
-                Apple is not a party to these Terms. Apple has no obligation to furnish any maintenance or
-                support services with respect to the App.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">4.2 Acknowledgement of Apple's Role</h3>
-              <p>
-                You acknowledge and agree that:
-              </p>
-              <ul>
-                <li>
-                  Apple has no responsibility whatsoever to furnish any maintenance and support services with
-                  respect to the App;
-                </li>
-                <li>
-                  In the event of any failure of the App to conform to any applicable warranty, you may notify
-                  Apple and Apple will refund the purchase price (if any) for the App. To the maximum extent
-                  permitted by applicable law, Apple will have no other warranty obligation whatsoever with
-                  respect to the App;
-                </li>
-                <li>
-                  Easy Life Better LLC, not Apple, is responsible for addressing any claims relating to the App
-                  or your possession and/or use of the App, including product liability claims, consumer protection
-                  claims, intellectual property infringement claims, and any other claims;
-                </li>
-                <li>
-                  Apple and Apple's subsidiaries are third-party beneficiaries of these Terms, and upon your
-                  acceptance, Apple will have the right (and will be deemed to have accepted the right) to enforce
-                  these Terms against you as a third-party beneficiary thereof.
-                </li>
-              </ul>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">4.3 Compliance with Apple Guidelines</h3>
-              <p>
-                The Easy Life Better App has been developed in compliance with the
-                <strong>Apple App Store Review Guidelines</strong> and all applicable Apple developer program
-                license agreements. We are committed to maintaining this compliance through all future updates.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">4.4 Usage Rules</h3>
-              <p>
-                Your use of the App is subject to the <strong>Usage Rules</strong> set forth in the Apple Media
-                Services Terms and Conditions. Easy Life Better LLC represents and warrants that it has not
-                and will not violate any third-party rights in providing the App.
-              </p>
-            </div>
-
-            <div class="legal-subsection">
-              <h3 class="legal-subsection-title">4.5 Export Compliance</h3>
-              <p>
-                You represent and warrant that (i) you are not located in a country that is subject to a U.S.
-                Government embargo, or that has been designated by the U.S. Government as a "terrorist supporting"
-                country; and (ii) you are not listed on any U.S. Government list of prohibited or restricted parties.
-              </p>
-            </div>
-
-          </section>
-
-          <!-- ─────────────────────────────────────────────────────────
-               SECTION 5 — CONTACT
-               ───────────────────────────────────────────────────────── -->
-          <section id="contact" aria-labelledby="contact-title">
-            <h2 class="legal-section-title" id="contact-title">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>Contact Us</span>
-            </h2>
-
-            <p>
-              If you have any questions about these Terms, the Privacy Policy, or any aspect of Easy Life Better LLC,
-              please contact us using the information below.
-            </p>
-
-            <div class="info-box" aria-label="Contact information">
-              <div class="info-box-title">Easy Life Better LLC - Legal &amp; Privacy Contact</div>
+            <div class="info-box">
+              <div class="info-box-title">Brand owner</div>
               <address>
-                <strong>Email:</strong>
-                <a href="mailto:contact@easylifebetter.com" style="color:var(--color-primary);font-weight:600;text-decoration:underline">
-                  contact@easylifebetter.com
-                </a><br /><br />
-                <strong>Mailing Address:</strong><br />
                 Easy Life Better LLC<br />
-                704 Wallace Street, Suite 289<br />
-                Clovis, NM 88101<br />
-                United States of America
+                704 Wallace St, Suite 289<br />
+                Clovis, New Mexico 88101<br />
+                USA<br />
+                <a href="mailto:contact@easylifebetter.com">contact@easylifebetter.com</a>
               </address>
             </div>
 
+            <div class="info-box">
+              <div class="info-box-title">EU Responsible Person</div>
+              <address>
+                Euverify Limited<br />
+                Unit 3D North Point House<br />
+                North Point Business Park<br />
+                New Mallow Road<br />
+                Cork, T23 AT2P<br />
+                Ireland
+              </address>
+            </div>
+          </section>
+
+          <!-- PRIVACY POLICY -->
+          <section id="privacy-policy" aria-labelledby="privacy-policy-title">
+            <h2 class="legal-section-title" id="privacy-policy-title"><span>Privacy Policy</span></h2>
+
             <p>
-              We will make every effort to respond to privacy-related inquiries within <strong>30 days</strong>.
-              For urgent matters, please include "URGENT" in the subject line of your email.
+              This Privacy Policy explains how Easy Life Better LLC ("we", "us", "our") handles personal information
+              in connection with this website, www.easylifebetter.com. This website presents our products. It has no
+              user accounts, no online shop and no sign-up forms.
             </p>
 
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Information we receive</h3>
+              <ul>
+                <li>
+                  <strong>Emails you send us.</strong> If you write to contact@easylifebetter.com, we receive your email
+                  address, your name if you include it, and the content of your message.
+                </li>
+                <li>
+                  <strong>Hosting logs.</strong> This website is hosted on GitHub Pages, a service of GitHub, Inc.
+                  When you visit the site, GitHub may record technical data such as your IP address, for security
+                  and to operate the service. This is described in the GitHub Privacy Statement.
+                </li>
+                <li>
+                  <strong>Fonts.</strong> The website loads its typeface from Google Fonts. Your browser connects to
+                  Google's servers to download it, which means Google receives your IP address.
+                </li>
+              </ul>
+              <p>
+                We do not use analytics, advertising trackers or cookies on this website.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">How we use it</h3>
+              <p>
+                We use the emails you send us only to answer your questions and to help you with our products.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">No sale of data</h3>
+              <p>
+                We do not sell, rent or trade your personal information. We share it only when the law requires us to,
+                or with the email provider that delivers our messages.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">How long we keep it</h3>
+              <p>
+                We keep your emails only as long as we need them to handle your request and to meet our legal obligations.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Your rights</h3>
+              <p>
+                Depending on where you live (for example in the European Union, the United Kingdom or California),
+                you can ask us to:
+              </p>
+              <ul>
+                <li>tell you what personal information we hold about you and give you a copy;</li>
+                <li>correct it;</li>
+                <li>delete it;</li>
+                <li>stop using it.</li>
+              </ul>
+              <p>
+                Write to <a href="mailto:contact@easylifebetter.com">contact@easylifebetter.com</a>. We answer within 30 days.
+                If you are in the European Union or the United Kingdom, you can also contact your local data protection authority.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Other websites</h3>
+              <p>
+                Links to Amazon and Instagram take you to websites we do not control. Their own privacy policies apply there.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Children</h3>
+              <p>
+                This website is not directed at children under 13, and we do not knowingly collect their personal information.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Changes</h3>
+              <p>
+                If we change this policy, we will publish the new version on this page and update the date at the top.
+              </p>
+            </div>
+          </section>
+
+          <!-- TERMS OF USE -->
+          <section id="terms-of-use" aria-labelledby="terms-of-use-title">
+            <h2 class="legal-section-title" id="terms-of-use-title"><span>Terms of Use</span></h2>
+
+            <p>
+              These Terms of Use apply to your use of www.easylifebetter.com, operated by Easy Life Better LLC.
+              By using the website, you accept these terms.
+            </p>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Use of the website</h3>
+              <p>
+                You may browse the website and use its content for your personal, non-commercial use. You agree not to
+                disrupt the website, try to access it in an unauthorized way, or use it for anything unlawful.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Product information and purchases</h3>
+              <p>
+                We describe our products as accurately as we can. Always follow the instructions and precautions
+                provided with the product and on our <a href="guide.html">guide page</a>. Our products are sold on Amazon,
+                and any purchase is governed by Amazon's terms of sale.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Intellectual property</h3>
+              <p>
+                The texts, photos, logos and design of this website belong to Easy Life Better LLC, unless stated otherwise.
+                The name "Easy Life Better", its logo and the slogan "Life made easy, in one snap" may not be used without
+                our written permission. You may share links to our pages.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">No warranty for the website</h3>
+              <p>
+                The website is provided "as is". We do our best to keep it accurate and available, but we cannot
+                guarantee that it will always be error-free or online.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Limitation of liability</h3>
+              <p>
+                To the extent permitted by law, Easy Life Better LLC is not liable for indirect or consequential damages
+                arising from your use of this website or of the websites it links to. Nothing in these terms limits any
+                rights you have as a consumer under the law of the country where you live.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Governing law</h3>
+              <p>
+                These terms are governed by the laws of the State of New Mexico, USA, without regard to its conflict of law rules.
+              </p>
+            </div>
+
+            <div class="legal-subsection">
+              <h3 class="legal-subsection-title">Changes</h3>
+              <p>
+                We may update these terms. The date at the top of this page shows the latest version.
+              </p>
+            </div>
+          </section>
+
+          <!-- CONTACT -->
+          <section id="contact" aria-labelledby="contact-title">
+            <h2 class="legal-section-title" id="contact-title"><span>Contact</span></h2>
+            <div class="info-box">
+              <div class="info-box-title">Easy Life Better LLC</div>
+              <address>
+                <strong>Email:</strong> <a href="mailto:contact@easylifebetter.com">contact@easylifebetter.com</a><br /><br />
+                <strong>Mailing address:</strong><br />
+                704 Wallace St, Suite 289<br />
+                Clovis, New Mexico 88101<br />
+                USA
+              </address>
+            </div>
           </section>
 
         </article>
@@ -585,52 +344,44 @@
     </div>
   </main>
 
-  <!-- ═══════════════════════════════════════ FOOTER -->
-  <footer class="footer" role="contentinfo" aria-label="Site footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-top">
-
         <div>
           <div class="footer-brand-logo">
-            <svg width="44" height="44" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="72" height="72" rx="16" fill="white" fill-opacity="0.12"/>
-              <text x="36" y="52" text-anchor="middle" font-size="38" font-family="system-ui">🌿</text>
-            </svg>
+            <img src="assets/elb_picto.svg" alt="" class="footer-picto" width="24" height="44" />
             <span class="footer-brand-name">Easy Life Better</span>
           </div>
           <p class="footer-brand-desc">
             Life made easy, in one snap.<br />
+            Makers of Easy Eclair, the silicone éclair mold.<br />
             Easy Life Better LLC, New Mexico, USA.
           </p>
         </div>
-
         <div>
-          <div class="footer-col-title">Navigation</div>
+          <h2 class="footer-col-title">Navigation</h2>
           <ul class="footer-links" role="list">
-            <li><a href="index.html"      class="footer-link">Home</a></li>
-            <li><a href="index.html#about"  class="footer-link">About</a></li>
-            <li><a href="products.html"   class="footer-link">Our Products</a></li>
-            <li><a href="apps.html"       class="footer-link">Our Apps</a></li>
+            <li><a href="index.html"   class="footer-link">Home</a></li>
+            <li><a href="product.html" class="footer-link">Easy Eclair</a></li>
+            <li><a href="guide.html"   class="footer-link">Guide &amp; Recipes</a></li>
+            <li><a href="legal.html"   class="footer-link">Legal</a></li>
           </ul>
         </div>
-
         <div>
-          <div class="footer-col-title">Legal</div>
+          <h2 class="footer-col-title">Information</h2>
           <ul class="footer-links" role="list">
-            <li><a href="#company-info"   class="footer-link">Company Information</a></li>
-            <li><a href="#privacy-policy" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#terms-of-use"   class="footer-link">Terms of Use</a></li>
-            <li><a href="#app-notices"    class="footer-link">App Store Notices</a></li>
-            <li><a href="#contact"        class="footer-link">Contact</a></li>
+            <li><a href="#privacy-policy"      class="footer-link">Privacy Policy</a></li>
+            <li><a href="#terms-of-use"        class="footer-link">Terms of Use</a></li>
+            <li><a href="#product-information" class="footer-link">Product information</a></li>
+            <li><a href="mailto:contact@easylifebetter.com" class="footer-link">contact@easylifebetter.com</a></li>
+            <li><a href="https://instagram.com/easy_life_better" class="footer-link" target="_blank" rel="noopener">Instagram @easy_life_better</a></li>
           </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <p class="footer-copy">
-          © 2025 Easy Life Better LLC. All rights reserved. &nbsp;·&nbsp;
-          704 Wallace Street Suite 289, Clovis, NM 88101, USA
+          &copy; 2026 Easy Life Better LLC. All rights reserved. &middot;
+          704 Wallace St, Suite 289, Clovis, NM 88101, USA
         </p>
         <div class="footer-legal-links">
           <a href="#privacy-policy" class="footer-legal-link">Privacy</a>
@@ -638,65 +389,22 @@
           <a href="#contact"        class="footer-legal-link">Contact</a>
         </div>
       </div>
-
     </div>
   </footer>
 
+  <script src="assets/site.js" defer></script>
   <script>
-    // Navbar scroll + logo swap
-    const nav = document.getElementById('main-nav');
-    const logo = document.querySelector('.nav-brand img');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        nav.classList.add('scrolled');
-        if (logo) logo.src = 'assets/elb_picto_dark.svg';
-      } else {
-        nav.classList.remove('scrolled');
-        if (logo) logo.src = 'assets/elb_picto.svg';
-      }
-    }, { passive: true });
-    if (window.scrollY > 60) { nav.classList.add('scrolled'); if (logo) logo.src = 'assets/elb_picto_dark.svg'; }
-
-    // Burger menu
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    if (burger && navLinks) {
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-        burger.classList.toggle('active');
-        burger.setAttribute('aria-expanded', navLinks.classList.contains('nav-open'));
-      });
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('nav-open');
-          burger.classList.remove('active');
-          burger.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-
-    // Scroll reveal
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Highlight active sidebar link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const sidebarLinks = document.querySelectorAll('.legal-sidebar-link');
-    const onScroll = () => {
-      let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-      sidebarLinks.forEach(l => {
-        l.style.color = l.getAttribute('href') === '#' + current ? 'var(--color-primary)' : '';
-        l.style.borderColor = l.getAttribute('href') === '#' + current ? 'var(--color-primary)' : 'transparent';
-        l.style.background = l.getAttribute('href') === '#' + current ? 'rgba(30,84,57,0.05)' : '';
-      });
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    (function () {
+      const sections = document.querySelectorAll('.legal-content section[id]');
+      const links = document.querySelectorAll('.legal-sidebar-link');
+      const onScroll = () => {
+        let current = '';
+        sections.forEach((s) => { if (window.scrollY >= s.offsetTop - 160) current = s.id; });
+        links.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
   </script>
-
 </body>
 </html>

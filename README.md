@@ -1,23 +1,21 @@
-# Easy Life Better — Brand Website
+# Easy Life Better, brand website
 
-Official brand website for **Easy Life Better LLC**, deployable on GitHub Pages.
+Brand website for Easy Life Better LLC and its first product, Easy Eclair (silicone éclair mold). Hosted on GitHub Pages.
 
 ## Pages
 
-- `index.html` — Main brand presentation page
-- `legal.html` — Privacy Policy, Terms of Use, Company Info & App Store Notices
-- `assets/style.css` — Global styles & CSS design tokens
+- `index.html`: home page
+- `product.html`: Easy Eclair product page
+- `guide.html`: instructions, recipes, care and precautions (target of the QR code on the leaflet)
+- `legal.html`: company and product information, Privacy Policy, Terms of Use
+- `products.html`: redirect to `product.html` for old links
 
-## Deploy to GitHub Pages
+## Configuration
 
-1. Push this repo to GitHub (any branch, e.g. `main`)
-2. Go to **Settings → Pages**
-3. Under **Source**, select `Deploy from a branch`
-4. Choose `main` branch, `/ (root)` folder → **Save**
-5. Your site will be live at `https://<username>.github.io/<repo-name>/`
+- Amazon store link: set `amazonStoreUrl` at the top of `assets/site.js`. Every button with `data-amazon-link` picks it up.
+- Thermomix video: on the `.video` block in `guide.html`, add `data-youtube="VIDEO_ID"` or `data-mp4="assets/your-video.mp4"`.
+- Styles and design tokens: `assets/style.css`.
 
-## Company
+## Contact
 
-**Easy Life Better LLC**
-704 Wallace Street Suite 289, Clovis, NM 88101, USA
 contact@easylifebetter.com
